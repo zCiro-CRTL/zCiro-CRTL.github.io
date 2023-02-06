@@ -1,17 +1,80 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-  <meta charset="utf-8">
-  <title>queseso</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="estilo.css">
+  <title>Boludometro</title>
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #333;
+      color: #fff;
+    }
+    button {
+      width: 100%;
+      background-color: #0c71c3;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 8px 16px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-bottom: 8px;
+    }
+    p {
+      font-size: 18px;
+      margin: 0;
+    }
+    .counter {
+      width: 90%;
+      max-width: 300px;
+      margin: 16px 0;
+      text-align: center;
+    }
+  </style>
 </head>
+<body>
+  <p>Hecho por Ciro Avila</p>
+  <div id="counter1" class="counter">
+    <button>Adrian</button>
+    <button id="reset1">Reset</button>
+    <p>Count: <span id="clickCount1">0</span></p>
+  </div>
+  <div id="counter2" class="counter">
+    <button>Ciro</button>
+    <button id="reset2">Reset</button>
+    <p>Count: <span id="clickCount2">0</span></p>
+  </div>
+  <div id="counter3" class="counter">
+    <button>Dante</button>
+    <button id="reset3">Reset</button>
+    <p>Count: <span id="clickCount3">0</span></p>
+  </div>
+  <div id="counter4" class="counter">
+    <button>Luciana</button>
+    <button id="reset4">Reset</button>
+    <p>Count: <span id="clickCount4">0</span></p>
+  </div>
+  <div id="counter5" class="counter">
+    <button>Samira</button>
+    <button id="reset5">Reset</button>
+    <p>Count: <span id="clickCount5">0</span></p>
+  </div>
 
-<body>
-  <iframe width="110" height="200" src="https://www.myinstants.com/instant/pintamos-toda-la-casa-5796/embed/" frameborder="0" scrolling="no"></iframe>
-<body>
-  <iframe width="110" height="200" src="https://www.myinstants.com/instant/que-es-eso-bob-esponja-60479/embed/" frameborder="0" scrolling="no"></iframe>
-<body>
-  <p>HECHO POR ZEUS/CIRO</p>
-</body>
-</html>
+  <script>
+    function addClickHandler(counterId) {
+      let count = 0;
+      const counterButton = document.querySelector(`#${counterId} button:first-of-type`);
+      const resetButton = document.querySelector(`#reset${counterId.slice(-1)}`);
+      const displayCount = document.querySelector(`#clickCount${counterId.slice(-1)}`);
+  
+      counterButton.addEventListener("click", function() {
+        count += 1;
+        displayCount.innerHTML = count;
+      });
+  
+      resetButton.addEventListener("
